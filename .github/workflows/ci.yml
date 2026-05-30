@@ -1,0 +1,38 @@
+# .github/workflows/ci.yml
+# Pipeline de integração contínua — executa os testes automaticamente a cada push
+
+name: CI - Testes Automatizados
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: Rodar Testes com Jest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar testes
+        run: npm test
+        env:
+          NODE_ENV: test
+
+      - name: Exibir cobertura dos testes
+        run: npm test -- --coverage --coverageReporters=text
+        env:
+          NODE_ENV: test
