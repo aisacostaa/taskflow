@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware para interpretar JSON no corpo das requisições
 app.use(express.json());
 
+// Serve os arquivos estáticos do frontend (pasta /public)
+app.use(express.static(require("path").join(__dirname, "../public")));
+
 // Rota raiz — verifica se a API está funcionando
 app.get("/", (req, res) => {
   res.json({

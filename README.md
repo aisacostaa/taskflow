@@ -9,6 +9,7 @@ Permitir que equipes acompanhem o fluxo de trabalho em tempo real, priorizem tar
 ## Escopo Inicial
 
 - CRUD completo de tarefas (criar, listar, buscar, atualizar, excluir)
+- Interface web completa para interação do usuário
 - Filtro de tarefas por status
 - Atribuição de prioridade (baixa, média, alta)
 - API REST em Node.js com Express
@@ -27,6 +28,7 @@ Permitir que equipes acompanhem o fluxo de trabalho em tempo real, priorizem tar
 
 - Node.js
 - Express
+- HTML, CSS e JavaScript (frontend)
 - Jest
 - Supertest
 - GitHub Actions
@@ -40,6 +42,8 @@ taskflow/
 │   ├── taskRouter.js     # Rotas da API
 │   ├── taskController.js # Controladores
 │   └── tasks.js          # Modelo e lógica de negócio
+├── public/
+│   └── index.html        # Interface web (frontend)
 ├── tests/
 │   └── tasks.test.js     # Testes automatizados
 ├── docs/                 # Documentação e diagramas UML
@@ -48,6 +52,18 @@ taskflow/
 │       └── ci.yml        # Pipeline GitHub Actions
 └── package.json
 ```
+
+## Interface Web
+
+O sistema conta com uma interface web completa acessível em `http://localhost:3000`.
+
+**Funcionalidades da interface:**
+- Dashboard com estatísticas em tempo real (total, em progresso, concluídas, prioridade alta)
+- Listagem de tarefas com indicador visual de prioridade
+- Filtros por status (todas, pendentes, em progresso, concluídas)
+- Criação e edição de tarefas via modal
+- Conclusão rápida de tarefas com um clique
+- Remoção de tarefas com confirmação
 
 ## Como Executar
 
@@ -64,7 +80,7 @@ npm start
 npm test
 ```
 
-O servidor estará disponível em `http://localhost:3000`.
+Após iniciar, acesse `http://localhost:3000` no navegador para usar a interface web.
 
 ## Endpoints da API
 
