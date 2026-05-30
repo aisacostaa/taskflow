@@ -83,3 +83,4 @@ function deleteTask(req, res) {
 }
 
 module.exports = { createTask, getAllTasks, getTaskById, updateTask, completeTask, deleteTask };
+// controlador de tarefas
