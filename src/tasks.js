@@ -117,3 +117,4 @@ function reset() {
 }
 
 module.exports = { create, findAll, findById, update, complete, remove, reset };
+// modelo de tarefas
