@@ -16,3 +16,4 @@ router.delete("/:id", controller.deleteTask);     // Remover tarefa
 router.patch("/:id/complete", controller.completeTask); // Marcar como concluída
 
 module.exports = router;
+// rotas da API
